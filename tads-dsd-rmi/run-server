@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+java -cp target/tads-dsd-rmi-*.jar io.tads.dsd.rmi.server.ServerApp
