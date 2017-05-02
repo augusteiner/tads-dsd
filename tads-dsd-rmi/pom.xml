@@ -19,4 +19,8 @@
 
   </dependencies>
 
+  <build>
+    <finalName>tads-dsd-rmi</finalName>
+  </build>
+
 </project>

@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-echo $( cd target/classes; rmiregistry )
+# echo $( cd target/classes; rmiregistry )
+
+rmiregistry -J-Djava.rmi.server.codebase=file://$PWD/target/tads-dsd-rmi.jar
