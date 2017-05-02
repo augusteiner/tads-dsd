@@ -31,13 +31,15 @@ import org.apache.xmlrpc.client.util.*;
 import io.tads.dsd.xmlrpc.*;
 
 /**
+ *
+ * Exemplo adaptado de {@link https://ws.apache.org/xmlrpc/server.html}
+ *
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
+ *
  */
-public class Client {
+public class Cliente {
 
     public static void main(String[] args) throws Exception {
-
-        /** XXX: Exemplo adaptado de https://ws.apache.org/xmlrpc/server.html */
 
         // create configuration
         XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
@@ -63,7 +65,7 @@ public class Client {
         ClientFactory factory = new ClientFactory(client);
 
         ICalculadora adder = (ICalculadora) factory.newInstance(
-            Client.class.getClassLoader(),
+            Cliente.class.getClassLoader(),
             ICalculadora.class,
             "calculadora");
 
@@ -71,4 +73,5 @@ public class Client {
         System.out.println("2 + 4 = " + sum);
 
     }
+
 }
