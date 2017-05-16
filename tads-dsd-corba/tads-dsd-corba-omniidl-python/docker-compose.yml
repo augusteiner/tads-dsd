@@ -1,0 +1,9 @@
+
+version: '3'
+
+services:
+
+  tads-dsd-corba-omniidl-python:
+    image: tads-dsd-corba-omniidl-python:jessie-slim
+    build: .
+

@@ -5,15 +5,15 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>io.tads.dsd.corba.idl</groupId>
-  <artifactId>tads-dsd-corba-idl</artifactId>
+  <groupId>io.tads.dsd.corba.idlj</groupId>
+  <artifactId>tads-dsd-corba-idlj</artifactId>
   <version>0.1.0-RELEASE</version>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <name>tads-dsd-corba-idl</name>
+  <name>tads-dsd-corba-idlj</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>

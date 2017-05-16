@@ -15,7 +15,7 @@
   </properties>
 
   <modules>
-    <module>tads-dsd-corba-idl</module>
+    <module>tads-dsd-corba-idlj</module>
     <module>tads-dsd-corba-java</module>
   </modules>
 

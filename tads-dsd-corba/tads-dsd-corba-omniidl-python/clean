@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+this_dir=$( cd $( dirname $0 ); pwd )
+
+rm -rfv $this_dir/src/

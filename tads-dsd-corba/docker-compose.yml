@@ -1,0 +1,33 @@
+
+version: '3'
+
+services:
+
+  orbd:
+    image: openjdk:alpine
+    command: orbd -ORBInitialPort 1050 -ORBInitialHost orbd
+    ports:
+      - "1050:1050"
+
+  corba-java:
+    image: openjdk:alpine
+    command: /bin/sh run
+    volumes:
+      - "$PWD/tads-dsd-corba-java:/wd"
+    working_dir: "/wd"
+    links:
+      - "orbd"
+    depends_on:
+      - "orbd"
+
+  corba-python:
+    image: tads-dsd-corba-omniidl-python:jessie-slim
+    command: /bin/sh run
+    volumes:
+      - "$PWD/tads-dsd-corba-omniidl-python:/wd"
+    working_dir: "/wd"
+    links:
+      - "orbd"
+    depends_on:
+      - "orbd"
+

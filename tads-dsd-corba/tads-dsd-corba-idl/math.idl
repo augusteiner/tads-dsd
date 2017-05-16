@@ -3,8 +3,10 @@ module main {
 
   interface Corba_Calc {
 
-    long add(in long a, in long b);
-    long sub(in long a, in long b);
+    double add(in double a, in double b);
+    double sub(in double a, in double b);
+
+    oneway void shutdown();
 
   };
 

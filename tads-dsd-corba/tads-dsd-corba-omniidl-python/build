@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+this_dir=$( cd $( dirname $0 ); pwd )
+target_dir=$this_dir
+
+cd $this_dir
+
+rm -rfv src
+
+mkdir -p src/main/python
+mkdir -p idl
+
+cp ../tads-dsd-corba-idl/*.idl idl
+
+omniidl -bpython idl/*.idl
+

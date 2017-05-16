@@ -1,0 +1,8 @@
+
+version: '3'
+
+services:
+
+  tads-dsd-corba-idlj:
+    image: tads-dsd-corba-idlj:alpine
+    build: .

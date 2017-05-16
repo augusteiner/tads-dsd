@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e
+
+# ping -c 5 orbd
+
+java -cp target/tads-dsd-corba-java-release.jar \
+  io.tads.dsd.corba.java.App \
+  -ORBInitialPort 1050 \
+  -ORBInitialHost orbd
+

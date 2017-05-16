@@ -24,11 +24,48 @@
   <dependencies>
 
     <dependency>
-      <groupId>io.tads.dsd.corba.idl</groupId>
-      <artifactId>tads-dsd-corba-idl</artifactId>
+      <groupId>io.tads.dsd.corba.idlj</groupId>
+      <artifactId>tads-dsd-corba-idlj</artifactId>
       <version>0.1.0-RELEASE</version>
     </dependency>
 
   </dependencies>
+
+  <build>
+
+    <plugins>
+
+      <plugin>
+
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.0.0</version>
+
+        <executions>
+
+          <execution>
+
+            <phase>package</phase>
+
+            <goals>
+              <goal>shade</goal>
+            </goals>
+
+            <configuration>
+
+              <finalName>${project.artifactId}-release</finalName>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+
+            </configuration>
+
+          </execution>
+
+        </executions>
+
+      </plugin>
+
+    </plugins>
+
+  </build>
 
 </project>

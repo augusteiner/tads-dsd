@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+this_dir=$( cd $( dirname $0 ); pwd )
+
+cd $this_dir
+
+docker-compose build

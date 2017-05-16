@@ -2,4 +2,22 @@
 
 proj_dir=$( cd $( dirname $0 ); pwd )
 
-sh */docker-build
+cd $proj_dir
+
+ls */docker-build | xargs -i sh {}
+
+docker run --rm -it \
+  -v "$PWD:/wd" \
+  -w "/wd" \
+  tads-dsd-corba-idlj:alpine /bin/sh tads-dsd-corba-idlj/build
+
+docker run --rm -it \
+  -v "$PWD:/wd" \
+  -w "/wd" \
+  -v "$HOME/.m2:/root/.m2" \
+  maven:alpine mvn clean package eclipse:eclipse
+
+docker run --rm -it \
+  -v "$PWD:/wd" \
+  -w "/wd" \
+  tads-dsd-corba-omniidl-python:jessie-slim /bin/sh tads-dsd-corba-omniidl-python/build
