@@ -1,5 +1,5 @@
 
-module Exemplo {
+module main {
 
   interface Corba_Calc {
 

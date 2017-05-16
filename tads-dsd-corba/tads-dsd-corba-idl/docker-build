@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+this_dir=$( cd $( dirname $0 ); pwd )
+
+docker run --rm -it \
+  -v "$this_dir:/wd" \
+  -w "/wd" \
+  tads-dsd-corba:latest /bin/sh build

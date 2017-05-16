@@ -1,16 +1,5 @@
 #!/usr/bin/env sh
 
 proj_dir=$( cd $( dirname $0 ); pwd )
-target_dir=$proj_dir/generated/src/main
 
-rm -rf $proj_dir/generated
-
-mkdir -p $target_dir/java
-mkdir -p $target_dir/python
-
-cd $target_dir
-
-omniidl -bpython -C$target_dir/python $proj_dir/*.idl
-
-idlj -fall -td $target_dir/java $proj_dir/*.idl
-
+sh */build

@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-docker run --rm -it \
-  -v "$PWD:/wd" \
-  -w "/wd" \
-  tads-dsd-corba:latest /bin/sh build
+proj_dir=$( cd $( dirname $0 ); pwd )
+
+sh */docker-build
