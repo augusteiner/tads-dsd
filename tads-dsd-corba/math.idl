@@ -1,7 +1,7 @@
 
-module Math {
+module Exemplo {
 
-  interface Calc {
+  interface Corba_Calc {
 
     long add(in long a, in long b);
     long sub(in long a, in long b);
