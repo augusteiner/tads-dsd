@@ -1,0 +1,8 @@
+
+version: '3'
+
+services:
+
+  corba:
+    image: tads-dsd-corba:latest
+    build: .

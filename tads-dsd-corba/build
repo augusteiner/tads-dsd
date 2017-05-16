@@ -5,7 +5,9 @@ target_dir=$proj_dir/generated/src/main
 
 rm -rf $proj_dir/generated
 
-mkdir -p $target_dir/{java,python}
+mkdir -p $target_dir/java
+mkdir -p $target_dir/python
+
 cd $target_dir
 
 omniidl -bpython -C$target_dir/python $proj_dir/*.idl
