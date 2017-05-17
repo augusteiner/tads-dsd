@@ -22,12 +22,12 @@ services:
 
   corba-python:
     image: tads-dsd-corba-omniidl-python:jessie-slim
-    command: /bin/sh run
+    command: python run $IOR
     volumes:
-      - "$PWD/tads-dsd-corba-omniidl-python:/wd"
+      - "$PWD/tads-dsd-corba-omniidl-python/generated:/wd"
     working_dir: "/wd"
     links:
       - "orbd"
     depends_on:
-      - "orbd"
+      - "corba-java"
 

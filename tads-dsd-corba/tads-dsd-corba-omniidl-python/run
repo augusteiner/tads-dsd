@@ -1,3 +1,24 @@
-#!/usr/bin/env sh
+#!/usr/bin/env python
 
-python --version
+import sys
+from omniORB import CORBA
+from main import Corba_Calc
+
+print sys.argv[1]
+
+orb = CORBA.ORB_init(sys.argv, CORBA.ORB_ID)
+
+ior = sys.argv[1]
+obj = orb.string_to_object(ior)
+
+eo = obj._narrow(Corba_Calc)
+
+if eo is None:
+  print "Object reference is not an main::Corba_Calc"
+  sys.exit(1)
+
+a = 1
+b = 2
+r  = eo.add(a, b)
+
+print "%s + %s = %s." % (a, b, r)

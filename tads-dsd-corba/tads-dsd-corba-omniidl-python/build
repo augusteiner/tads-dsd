@@ -1,16 +1,22 @@
 #!/usr/bin/env sh
 
+set -e
+
 this_dir=$( cd $( dirname $0 ); pwd )
 target_dir=$this_dir
 
+generated_dir=generated/
+
 cd $this_dir
 
-rm -rfv src
+rm -rf $generated_dir
 
-mkdir -p src/main/python
-mkdir -p idl
+mkdir -p $generated_dir
 
-cp ../tads-dsd-corba-idl/*.idl idl
+cp ../tads-dsd-corba-idl/*.idl $generated_dir
+cp run $generated_dir
 
-omniidl -bpython idl/*.idl
+cd $generated_dir
+
+omniidl -bpython *.idl
 
