@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+mvn -q activemq:run
+

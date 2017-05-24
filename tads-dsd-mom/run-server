@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+java -cp target/tads-dsd-mom-release.jar \
+  io.tads.dsd.mom.server.App \
+  "tcp://localhost:61616"
+
