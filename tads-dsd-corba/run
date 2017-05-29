@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+docker-compose up -d --no-deps orbd corba-java
+
+sleep 2
+
+IOR=$( docker-compose logs | grep IOR | cut -d '|' -f 2 )
+
+export IOR=$IOR
+
+docker-compose up --no-deps corba-python
+
+docker-compose down
+
