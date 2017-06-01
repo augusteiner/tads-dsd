@@ -4,18 +4,12 @@ info:
     name: MIT
 tags:
   - name: Calculadora
-schemes:
-  - http
-consumes:
-  - application/json
-produces:
-  - application/json
 paths:
-  /calculadora/somar:
+  /calculadora/soma:
     get:
       tags:
         - Calculadora
-      operationId: somar
+      operationId: soma
       parameters:
         - name: parcela1
           in: query
@@ -30,10 +24,6 @@ paths:
       responses:
         "200":
           schema:
-            $ref: '#/definitions/Resultado'
-definitions:
-  Resultado:
-    properties:
-      valor:
-        type: "number"
-        format: "double"
+            type: "number"
+            format: "double"
+

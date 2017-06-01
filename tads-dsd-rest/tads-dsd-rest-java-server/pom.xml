@@ -31,13 +31,16 @@
             </goals>
             <configuration>
               <inputSpec>${session.executionRootDirectory}/api.yaml</inputSpec>
-              <language>jaxrs-spec</language>
-              <apiPackage>io.tads.dsd.rest.java.server</apiPackage>
-              <modelPackage>io.tads.dsd.rest.java.model</modelPackage>
-              <output>${basedir}</output>
-              <skipOverwrite>true</skipOverwrite>
+              <language>jaxrs-cxf</language>
+              <apiPackage>io.tads.dsd.rest.java.server.skeleton</apiPackage>
+              <!-- <modelPackage>io.tads.dsd.rest.java.model</modelPackage> -->
+              <!-- <output>${basedir}</output> -->
+              <generateApis>true</generateApis>
+              <generateApiTests>false</generateApiTests>
+              <!-- <skipOverwrite>true</skipOverwrite> -->
               <configOptions>
-                <sourceFolder>src/main/java</sourceFolder>
+                <!-- <useAnnotatedBasePath>false</useAnnotatedBasePath> -->
+                <sourceFolder>src/gen/java/main</sourceFolder>
               </configOptions>
             </configuration>
           </execution>
@@ -81,9 +84,8 @@
       <version>${swagger-annotations-version}</version>
     </dependency>
 
-    <!-- You can find the dependencies for the library configuation you chose by looking in 
-      JavaClientCodegen. Then find the corresponding dependency on Maven Central, and set the versions 
-      in the property section below -->
+    <!-- You can find the dependencies for the library configuation you chose by looking in JavaClientCodegen. Then find
+      the corresponding dependency on Maven Central, and set the versions in the property section below -->
 
     <!-- HTTP client: jersey-client -->
     <dependency>
@@ -231,6 +233,18 @@
       <version>${jersey-version}</version>
       <scope>runtime</scope>
     </dependency>
+
+    <!-- <dependency> -->
+    <!-- <groupId>org.apache.cxf</groupId> -->
+    <!-- <artifactId>cxf-rt-rs-service-description</artifactId> -->
+    <!-- <version>3.1.11</version> -->
+    <!-- </dependency> -->
+
+    <!-- <dependency> -->
+    <!-- <groupId>junit</groupId> -->
+    <!-- <artifactId>junit</artifactId> -->
+    <!-- <version>4.12</version> -->
+    <!-- </dependency> -->
 
   </dependencies>
 

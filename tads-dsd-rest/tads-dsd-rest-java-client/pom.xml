@@ -31,8 +31,8 @@
             <configuration>
               <inputSpec>${session.executionRootDirectory}/api.yaml</inputSpec>
               <language>jaxrs-cxf-client</language>
-              <apiPackage>io.tads.dsd.rest.java.client</apiPackage>
-              <modelPackage>io.tads.dsd.rest.java.model</modelPackage>
+              <apiPackage>io.tads.dsd.rest.java.stub</apiPackage>
+              <!-- <modelPackage>io.tads.dsd.rest.java.model</modelPackage> -->
               <configOptions>
                 <sourceFolder>src/gen/java/main</sourceFolder>
               </configOptions>

@@ -21,46 +21,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package io.tads.dsd.rest.java.client;
+package io.tads.dsd.rest.java.server;
 
-import java.util.*;
-
-import org.apache.cxf.jaxrs.client.*;
-
-import com.fasterxml.jackson.jaxrs.json.*;
-
-import io.tads.dsd.rest.java.stub.*;
+import io.tads.dsd.rest.java.server.skeleton.*;
 
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
  */
-public class App {
+public class Calculadora implements CalculadoraApi {
 
-    public static void main(String[] args) {
+    @Override
+    public Double soma(Double parcela1, Double parcela2) {
 
-        JacksonJsonProvider provider = new JacksonJsonProvider();
-
-        List<Object> providers = new ArrayList<Object>();
-        providers.add(provider);
-
-        CalculadoraApi calculadora = JAXRSClientFactory.create(
-            "http://localhost:9090",
-            CalculadoraApi.class,
-            providers
-        );
-
-        Double parcela1 = 3D;
-        Double parcela2 = 4D;
-
-        Double resultado = calculadora.soma(parcela1, parcela2);
-
-        System.out.printf(
-            "A soma de %s + %s = %s\n",
-            parcela1,
-            parcela2,
-            resultado
-        );
-
+        return parcela1 + parcela2;
     }
 
 }
