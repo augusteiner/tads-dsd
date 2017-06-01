@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+mvn jetty:run -pl tads-dsd-rest-java-server
+
