@@ -23,8 +23,8 @@
  */
 package io.tads.dsd.soap.client;
 
-import localhost._9090.calculadora.Calculadora;
-import localhost._9090.calculadora.Calculadora_Service;
+import io.tads.dsd.soap.server.*;
+import localhost._9090.calculadora.*;
 
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
@@ -36,14 +36,13 @@ public class App {
      */
     public static void main(String[] args) {
 
-        Calculadora calculadora = new Calculadora_Service().getCalculadoraSOAP();
+        Calculadora calculadora = new CalculadoraService().getCalculadoraPort();
 
-        double parcela1 = 2;
-        double parcela2 = 4;
+        int numero = 6;
 
-        double resultado = calculadora.soma(parcela1, parcela2);
+        int resultado = calculadora.fatorial(numero);
 
-        System.out.printf("Soma %s + %s = %s", parcela1, parcela2, resultado);
+        System.out.printf("%s! = %s", numero, resultado);
 
     }
 

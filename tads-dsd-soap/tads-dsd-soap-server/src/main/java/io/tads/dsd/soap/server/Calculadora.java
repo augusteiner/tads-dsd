@@ -23,20 +23,28 @@
  */
 package io.tads.dsd.soap.server;
 
-import javax.xml.ws.Endpoint;
+import javax.jws.WebService;
 
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
  */
-public class App {
+@WebService(endpointInterface = "localhost._9090.calculadora.Calculadora")
+public class Calculadora implements localhost._9090.calculadora.Calculadora {
 
     /**
-     * @param args
+     * @see {@link https://kerflyn.wordpress.com/2011/11/16/implementing-the-factorial-function-using-java-and-guava/}
      */
-    public static void main(String[] args) {
+    private static int fat(int n, int k) {
 
-        Endpoint.publish("http://localhost:9090/", new Calculadora());
+        if (n == 0) return k;
+        else return fat(n - 1, n * k);
 
+    }
+
+    @Override
+    public int fatorial(int numero) {
+
+        return fat(numero, 1);
     }
 
 }
