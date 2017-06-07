@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+rm -rfv */target/
+
+rm -rfv tads-dsd-rest-php-client/src/vendor/
+

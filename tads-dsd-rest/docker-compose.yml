@@ -1,0 +1,64 @@
+
+version: '3'
+
+services:
+
+  java-server-builder:
+    restart: "no"
+    image: maven:alpine
+    user: "1000:1000"
+    working_dir: "/wd"
+    volumes:
+      - "$PWD:/wd"
+      - "$HOME/.m2:/data/.m2"
+      - "$PWD/bin/build-server:/usr/local/bin/build-server"
+    environment:
+      - _MAVEN_OPTS=-Dmaven.repo.local=/data/.m2/repository -q
+    command:
+      - /bin/sh
+      - /usr/local/bin/build-server
+
+  java-server:
+    image: maven:alpine
+    ports:
+      - "9090:8080"
+    working_dir: "/wd"
+    user: "1000:1000"
+    volumes:
+      - "$PWD/tads-dsd-rest-java-server:/wd"
+      - "$PWD/bin/run-server:/usr/local/bin/run-server"
+    command:
+      - /bin/sh
+      - /usr/local/bin/run-server
+
+  php-client-builder:
+    restart: "no"
+    build: ./tads-dsd-rest-php-client
+    working_dir: "/wd"
+    user: "1000:1000"
+    volumes:
+      - "$PWD/tads-dsd-rest-php-client:/wd"
+      - "$PWD/bin/build-client:/usr/local/bin/build-client"
+      - "$HOME/.composer:/data/.composer"
+    environment:
+      - _COMPOSER_OPTS=-q
+      - COMPOSER_CACHE_DIR=/data/.composer/cache
+    command:
+      - /bin/sh
+      - /usr/local/bin/build-client
+
+  php-client:
+    restart: "no"
+    image: tads-dsd-rest-php-client:alpine
+    build: ./tads-dsd-rest-php-client
+    command:
+      - /bin/sh
+      - /usr/local/bin/run-client
+    working_dir: "/wd"
+    user: "1000:1000"
+    volumes:
+      - "$PWD/tads-dsd-rest-php-client:/wd"
+      - "$PWD/bin/run-client:/usr/local/bin/run-client"
+    links:
+      - "java-server"
+

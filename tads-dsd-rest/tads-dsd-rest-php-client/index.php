@@ -7,7 +7,7 @@ use io\tads\dsd\rest\php\Configuration;
 use io\tads\dsd\rest\php\stub\CalculadoraApi;
 
 $config = new Configuration();
-$config->setHost('http://localhost:9090');
+$config->setHost('http://java-server:8080');
 
 $client = new ApiClient($config);
 

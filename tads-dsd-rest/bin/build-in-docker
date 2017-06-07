@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+docker-compose run php-client-builder
+docker-compose run java-server-builder
+

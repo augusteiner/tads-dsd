@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+mvn $_MAVEN_OPTS clean package dependency:sources eclipse:eclipse
+
+echo 'server built!'
+

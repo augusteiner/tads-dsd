@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+export PATH=$PATH:$PWD/bin
+
+build-server
+
+cd tads-dsd-rest-php-client
+
+build-client
+

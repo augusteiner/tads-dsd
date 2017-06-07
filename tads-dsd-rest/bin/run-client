@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# composer install --working-dir=src/
+
+exec php index.php 4 5
+

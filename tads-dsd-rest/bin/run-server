@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+exec java -jar target/dependency/runner.jar target/tads-dsd-rest-java-server-1.0-SNAPSHOT.war
+

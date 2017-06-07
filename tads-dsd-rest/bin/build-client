@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+composer $_COMPOSER_OPTS install --working-dir=src/
+
+echo 'client built!'
+
