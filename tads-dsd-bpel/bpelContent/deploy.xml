@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:math="http://tads.ifrn.edu.br/math/">
+  <process name="math:bhaskaraProcess">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="math:bhaskaraProcessService" port="bhaskaraProcessPort"/>
+    </provide>
+    <invoke partnerLink="deltaPL">
+      <service name="math:delta" port="deltaSOAP"/>
+    </invoke>
+    <invoke partnerLink="bhaskaraPL">
+      <service name="math:bhaskara" port="bhaskaraSOAP"/>
+    </invoke>
+  </process>
+</deploy>
