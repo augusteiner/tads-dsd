@@ -27,33 +27,28 @@ import javax.jws.*;
 
 import br.edu.ifrn.tads.math.*;
 
-import static java.lang.Math.*;
-
 /**
  * @author José Nascimento <joseaugustodearaujonascimento@gmail.com>
  */
 @WebService(
-    endpointInterface = "br.edu.ifrn.tads.math.BhaskaraInterface", 
-    serviceName = "bhaskara",
-    portName = "bhaskaraPort")
-public class BhaskaraImpl implements BhaskaraInterface {
+    endpointInterface = "br.edu.ifrn.tads.math.DeltaInterface",
+    serviceName = "delta",
+    portName = "deltaPort")
+public class DeltaImpl implements DeltaInterface {
 
     @Override
-    public RespostaBinaria bhaskara(EntradaBhaskara parameters) {
+    public RespostaUnaria delta(EntradaTernaria parameters) {
 
         double a = parameters.getA();
         double b = parameters.getB();
+        double c = parameters.getC();
 
-        double delta = parameters.getDelta();
+        final double _r = (b * b) - (4 * a * c);
 
-        double raizDelta = sqrt(delta);
+        System.out.println("Chamado serviço de delta");
 
-        final double _x1 = (-b + raizDelta) / (2 * a);
-        final double _x2 = (-b - raizDelta) / (2 * a);
-
-        return new RespostaBinaria() {{
-            setX1(_x1);
-            setX2(_x2);
+        return new RespostaUnaria() {{
+            setR(_r);
         }};
 
     }
