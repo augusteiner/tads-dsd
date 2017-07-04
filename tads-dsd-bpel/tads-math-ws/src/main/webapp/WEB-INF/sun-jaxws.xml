@@ -8,4 +8,4 @@
   <endpoint name="delta" implementation="br.edu.ifrn.tads.math.impl.DeltaImpl"
     url-pattern="/math/delta" />
 
-</endpoints> 
+</endpoints>
