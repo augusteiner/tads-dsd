@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<project
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+  xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.tads.dsd.bpel.ws.impl</groupId>
+    <artifactId>tads-dsd-bpel-ws-impl</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>br.edu.ifrn.tads.math.ws</groupId>
+  <artifactId>tads-math-ws</artifactId>
+  <version>0.1.0-RELEASE</version>
+
+  <packaging>war</packaging>
+
+  <name>tads-math-ws</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>javax.xml.ws</groupId>
+      <artifactId>jaxws-api</artifactId>
+      <version>2.2.11</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.sun.xml.ws</groupId>
+      <artifactId>jaxws-rt</artifactId>
+      <version>2.1.3</version>
+    </dependency>
+
+    <dependency>
+      <groupId>br.edu.ifrn.tads.math.impl</groupId>
+      <artifactId>tads-math-impl</artifactId>
+      <version>0.1.0-RELEASE</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <finalName>tads-math-ws</finalName>
+
+    <plugins>
+
+      <plugin>
+
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>${jetty-version}</version>
+
+        <configuration>
+
+          <scanIntervalSeconds>1</scanIntervalSeconds>
+
+          <httpConnector>
+            <port>9090</port>
+          </httpConnector>
+
+        </configuration>
+
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <properties>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jetty-version>9.3.9.M0</jetty-version>
+
+  </properties>
+
+</project>

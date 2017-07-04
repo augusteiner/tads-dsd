@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime"
+  version="2.0">
+
+  <endpoint name="bhaskara" implementation="br.edu.ifrn.tads.math.impl.BhaskaraImpl"
+    url-pattern="/math/bhaskara" />
+
+  <endpoint name="delta" implementation="br.edu.ifrn.tads.math.impl.DeltaImpl"
+    url-pattern="/math/delta" />
+
+</endpoints> 
