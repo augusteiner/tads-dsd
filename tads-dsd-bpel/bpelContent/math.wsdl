@@ -92,12 +92,12 @@
   </wsdl:binding>
   <wsdl:service name="bhaskara">
     <wsdl:port binding="tns:bhaskaraSOAP" name="bhaskaraSOAP">
-      <soap:address location="http://localhost:8080/math/bhaskara" />
+      <soap:address location="http://localhost:9090/math/bhaskara" />
     </wsdl:port>
   </wsdl:service>
   <wsdl:service name="delta">
     <wsdl:port binding="tns:deltaSOAP" name="deltaSOAP">
-      <soap:address location="http://localhost:8080/math/delta" />
+      <soap:address location="http://localhost:9090/math/delta" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

@@ -79,7 +79,7 @@
     <soap:binding style="document"
       transport="http://schemas.xmlsoap.org/soap/http" />
     <operation name="process">
-      <soap:operation soapAction="http://tads.ifrn.edu.br/math//process" />
+      <soap:operation soapAction="http://tads.ifrn.edu.br/math/process" />
       <input>
         <soap:body use="literal" />
       </input>
