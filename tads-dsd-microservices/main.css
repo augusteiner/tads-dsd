@@ -1,0 +1,70 @@
+@media print {
+
+  section.capa footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  section.capa main {
+    margin-top: 50%;
+  }
+
+  section.capa aside {
+    margin-top: 30%;
+  }
+
+}
+
+figcaption {
+  text-align: center;
+  font-size: smaller;
+  font-style: italic;
+}
+
+figcaption img {
+  padding: 10px;
+  border: solid 1px lightgray;
+}
+
+p {
+  text-indent: 25px;
+}
+
+body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+section.capa main {
+  text-align: center;
+  font-weight: bolder;
+}
+
+section.capa aside {
+  text-align: right;
+}
+
+section.capa header,
+section.capa footer {
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+p.quebra-pagina {
+  page-break-before: always;
+}
+
+h1, h2, h3, h4, h5 {
+  border: none;
+}
+h1 {
+  text-decoration: underline;
+  font-size: 1.2rem; }
+h2 { font-size: 1.1rem; }
+h3 { font-size: 1.0rem; }
+h4 { font-size: 0.9rem; }
+h5 { font-size: 0.8rem; }

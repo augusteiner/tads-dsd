@@ -1,0 +1,7 @@
+{
+  "name": "tads-dsd-microservices",
+  "version": "0.1.0-RELEASE",
+  "dependencies": {
+    "markdown-it": "^8.3.1"
+  }
+}
