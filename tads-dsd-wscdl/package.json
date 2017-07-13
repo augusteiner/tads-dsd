@@ -1,0 +1,7 @@
+{
+  "name": "tads-dsd-wscdl",
+  "version": "0.1.0-RELEASE",
+  "dependencies": {
+    "markdown-it": "^8.3.1"
+  }
+}
