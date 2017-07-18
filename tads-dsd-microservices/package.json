@@ -3,5 +3,8 @@
   "version": "0.1.0-RELEASE",
   "dependencies": {
     "markdown-it": "^8.3.1"
+  },
+  "scripts": {
+    "build": "markdown-it -o README.html README.md"
   }
 }

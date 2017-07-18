@@ -1,0 +1,9 @@
+{
+  "name": "tads-dsd",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "npm run build-wscdl && npm run build-microservices",
+    "build-wscdl": "cd tads-dsd-wscdl && npm run build",
+    "build-microservices": "cd tads-dsd-microservices && npm run build"
+  }
+}

@@ -4,3 +4,7 @@
 
 **/.project
 **/.classpath
+
+**/node_modules/
+
+**lock.json
